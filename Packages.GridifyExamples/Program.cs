@@ -18,7 +18,7 @@ app.MapGet("/", () => "Hello World.");
 
 app.MapGet("/blog/{pageNo}/{pageSize}", async (int pageNo, int pageSize, AppDbContext db) =>
 {
-    var query = new GridifyQuery()
+    GridifyQuery? query = new GridifyQuery()
     {
         Page = pageNo,
         PageSize = pageSize,
